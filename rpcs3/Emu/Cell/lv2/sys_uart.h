@@ -19,3 +19,11 @@ error_code sys_uart_get_params(vm::ptr<char> buffer);
 
 error_code sys_sm_get_ext_event2(vm::ptr<u32> stack1, vm::ptr<u32> stack2, vm::ptr<u32> stack3, u32 maybe_bool);
 error_code sys_sm_get_params(vm::ptr<u64> a, vm::ptr<u64> b, vm::ptr<u64> c, vm::ptr<u64> d);
+
+struct mouse_info
+{
+	u32 o_0;
+	u32 state;
+};
+error_code sys_hid_510();
+error_code sys_hid_514(u32 a, vm::ptr<u32> b, u32 c);

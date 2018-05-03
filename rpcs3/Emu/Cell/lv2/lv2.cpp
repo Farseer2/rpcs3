@@ -487,11 +487,11 @@ const std::array<ppu_function_t, 1024> s_ppu_syscall_table
 	null_func,//BIND_FUNC(sys_hid_manager_remove_hot_key_observer) //507 (0x1FB)  ROOT
 	null_func,//BIND_FUNC(sys_hid_manager_grab_focus)       //508 (0x1FC)  ROOT
 	null_func,//BIND_FUNC(sys_hid_manager_release_focus)    //509 (0x1FD)  ROOT
-	null_func,//BIND_FUNC(sys_hid_manager_...)              //510 (0x1FE)
+	BIND_FUNC(sys_hid_510),					                //510 (0x1FE)
 	null_func,//BIND_FUNC(sys_hid_manager_set_...)          //511 (0x1FF)  ROOT
 	null_func,//BIND_FUNC(sys_hid_manager_...)              //512 (0x200)  ROOT
 	null_func,//BIND_FUNC(sys_hid_manager_...)              //513 (0x201)
-	null_func,//BIND_FUNC(sys_hid_manager_...)              //514 (0x202)
+	BIND_FUNC(sys_hid_514),					                //514 (0x202)
 	null_func,                                              //515 (0x203)  UNS
 	BIND_FUNC(sys_config_open),			                    //516 (0x204)
 	BIND_FUNC(sys_config_close),					        //517 (0x205)

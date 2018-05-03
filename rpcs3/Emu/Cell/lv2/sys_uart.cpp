@@ -78,3 +78,18 @@ error_code sys_sm_get_params(vm::ptr<u64> a, vm::ptr<u64> b, vm::ptr<u64> c, vm:
 	*d = 0;
 	return CELL_OK;
 }
+
+// TODO temporarily in this file
+logs::channel sys_hid("sys_hid");
+error_code sys_hid_510()
+{
+	sys_hid.todo("sys_hid_510()");
+	return CELL_OK;
+}
+
+error_code sys_hid_514(u32 a, vm::ptr<u32> b, u32 c)
+{
+	sys_hid.todo("sys_hid_514(0x%x, *0x%x, 0x%x)", a, b, c);
+
+	return CELL_OK;
+}

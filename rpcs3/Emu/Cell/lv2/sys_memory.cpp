@@ -37,6 +37,7 @@ error_code sys_memory_allocate(u32 size, u64 flags, vm::ptr<u32> alloc_addr)
 
 	default:
 	{
+		fmt::throw_exception("A");
 		return CELL_EINVAL;
 	}
 	}

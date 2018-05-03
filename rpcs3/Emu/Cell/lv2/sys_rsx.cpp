@@ -88,9 +88,10 @@ s32 sys_rsx_context_allocate(vm::ptr<u32> context_id, vm::ptr<u64> lpar_dma_cont
 	if (!m_sysrsx)
 		fmt::throw_exception("sys_rsx_context_allocate called twice.");
 
-	u32 addr = vm::falloc(0x40000000, 0x400000);
-	if (addr == 0 || addr != 0x40000000)
-		fmt::throw_exception("Failed to alloc 0x40000000.");
+	u32 target = 0x40000000; //g_vsh ? 0x60000000 : 0x40000000;
+	u32 addr = vm::falloc(target, 0x400000);
+	if (addr == 0 || addr != target)
+		fmt::throw_exception("Failed to alloc 0x%p.", target);
 
 	*context_id = 0x55555555;
 

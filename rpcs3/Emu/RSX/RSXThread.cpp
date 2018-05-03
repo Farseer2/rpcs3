@@ -34,7 +34,7 @@ namespace rsx
 
 	u32 get_address(u32 offset, u32 location)
 	{
-
+		bool g_vsh = true;
 		switch (location)
 		{
 		case CELL_GCM_CONTEXT_DMA_MEMORY_FRAME_BUFFER:
@@ -76,13 +76,13 @@ namespace rsx
 
 		case CELL_GCM_CONTEXT_DMA_SEMAPHORE_RW:
 		case CELL_GCM_CONTEXT_DMA_SEMAPHORE_R:
-			return 0x40300000 + offset;
+			return (g_vsh ? 0x60300000 : 0x40300000) + offset;
 
 		case CELL_GCM_CONTEXT_DMA_DEVICE_RW:
-			return 0x40000000 + offset;
+			return (g_vsh ? 0x60000000 : 0x40000000) + offset;
 
 		case CELL_GCM_CONTEXT_DMA_DEVICE_R:
-			return 0x40000000 + offset;
+			return (g_vsh ? 0x60000000 : 0x40000000) + offset;
 
 		default:
 			fmt::throw_exception("Invalid location (offset=0x%x, location=0x%x)" HERE, offset, location);

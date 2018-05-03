@@ -61,7 +61,7 @@ error_code sys_config_register_service(u32 config_id, s32 b, u32 c, u32 d, vm::p
 
 error_code sys_config_add_service_listener(u32 config_id, s64 id, u32 c, u32 d, vm::ptr<ServiceListenerCallback[2]> funcs, u32 f, u32 g)
 {
-	sys_config.todo("sys_config_add_service_listener(config_id=0x%x, id=0x%x, 0x%x, 0x%x, 0x%x, 0x%x, 0x%x)", config_id, id, c, d, funcs, f, g);
+	sys_config.todo("sys_config_add_service_listener(config_id=0x%x, id=0x%x, 0x%x, 0x%x, funcs=0x%x, 0x%x, 0x%x)", config_id, id, c, d, funcs, f, g);
 	//VSH, @61CE68 - add_service_listener is called with 2 `funcs`, first being an add controller functions, second being a remove controller
 
 	auto start_func = *funcs[0];
